@@ -1,12 +1,6 @@
 import math
 
-myLis = [2,4,0,2,1,8,9,2,6,8,4]
 
-count = 1
-
-isFeq = False
-
-myLis.sort()
 
 def feqToLis(feq):
     temp = []
@@ -14,9 +8,6 @@ def feqToLis(feq):
         for m in range(n[0]):
             temp.append(n[1])
     return temp
-
-if isFeq:
-    myLis = feqToLis(myLis)
 
 
 def mean(lis):
@@ -183,58 +174,3 @@ def SSR(x,y):
     for n in range(len(y)):
         s = s + math.pow((slope*x[n] + intercept) - average, 2)
     return s
-
-
-
-
-myLis = [(55,8.5),(87,22.0),(57,10.0),(65,22.5),(54,12.0),(66,12.0),(63,7.5),(80,13.0),(76,16.5),(53,22.0)]
-
-lisX = []
-lisY = []
-
-for n in range(len(myLis)):
-    lisX.append(myLis[n][0])
-    lisY.append(myLis[n][1])
-
-m = b1(lisX,lisY)
-b = b0(lisX,lisY,m)
-
-
-print "b0: \t %f" % b
-
-print "b1: \t %f" % m
-
-total = SST(lisY)
-regres = SSR(lisX,lisY)
-
-print "SST: \t %f" % total
-
-print "SSR: \t %f" % regres
-
-print "SSE: \t %f" % (total - regres)
-
-print "r^2: \t %f" % (float(regres)/float(total))
-
-print "r: \t %f" % math.sqrt(float(regres)/float(total))
-
-
-# if count is not 1:
-
-#     lisLis = []
-
-#     for n in range(count):
-#         lisLis.append([])
-
-#     for n in myLis:
-#         for m in range(count):
-#             lisLis[m].append(n[m])
-
-#     for n in range(count):
-#         print "---------%d---------" % n
-#         lisLis[n].sort()
-#         myPrint(lisLis[n])
-
-# else:
-#     myPrint(myLis)
-
-
